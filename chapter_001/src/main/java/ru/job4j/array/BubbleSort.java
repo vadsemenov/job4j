@@ -1,6 +1,11 @@
 package ru.job4j.array;
 
 
+/**
+ * Класс реализует пузырьковую сортировку
+ *
+ * @author Vadim Semenov
+ */
 public class BubbleSort {
     public int[] sort(int[] array) {
         int temp;

@@ -1,5 +1,10 @@
 package ru.job4j.array;
 
+/**
+ * Класс реализующий проверку на совпадающие значения.
+ *
+ * @author Vadim Semenov
+ */
 public class Check {
     public boolean mono(boolean[] data) {
         boolean result = true;

@@ -1,5 +1,9 @@
 package ru.job4j.loop;
 
+/**
+ * Класс для вычисления факториала
+ *
+ */
 public class Factorial {
     public int calc(int n) {
         int result = 1;

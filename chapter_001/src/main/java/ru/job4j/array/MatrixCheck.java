@@ -1,5 +1,11 @@
 package ru.job4j.array;
 
+/**
+ * Класс реализующий проверку диагоналей
+ * массива на заполнение true или false
+ *
+ * @author Vadim Semenov
+ */
 public class MatrixCheck {
     public boolean mono(boolean[][] data) {
         boolean result = true;

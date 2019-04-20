@@ -3,6 +3,11 @@ package ru.job4j.array;
 
 import java.util.Arrays;
 
+/**
+ * Класс для удаления дубликатов в массиве
+ *
+ * @author Vadim Semenov
+ */
 public class ArrayDuplicate {
 
     public String[] remove(String[] array) {

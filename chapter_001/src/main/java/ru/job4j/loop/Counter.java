@@ -1,5 +1,9 @@
 package ru.job4j.loop;
 
+/**
+ * Класс возвращает сумму четных чисел
+ *
+ */
 public class Counter {
     public int add(int start, int finish) {
         int sum = 0;

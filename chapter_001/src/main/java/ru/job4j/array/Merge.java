@@ -9,7 +9,6 @@ import java.util.Arrays;
  * @since 20.04.2019
  */
 public class Merge {
-
     public int[] merge(int[] left, int[] right) {
         if (left.length == 0 && right.length == 0) {
             return new int[0];
@@ -27,7 +26,6 @@ public class Merge {
             }
             return array;
         }
-
         return null;
     }
 }

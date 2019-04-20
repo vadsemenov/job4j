@@ -7,11 +7,10 @@ package ru.job4j.calculator;
  * @since 13.04.2019
  */
 public class Calculator {
-
     /**
      * Method to add
      *
-     * @param first first digit
+     * @param first  first digit
      * @param second second digit
      * @return result
      */
@@ -22,7 +21,7 @@ public class Calculator {
     /**
      * Method to subtract
      *
-     * @param first first digit
+     * @param first  first digit
      * @param second second digit
      * @return result
      */
@@ -33,7 +32,7 @@ public class Calculator {
     /**
      * Method to div
      *
-     * @param first first digit
+     * @param first  first digit
      * @param second second digit
      * @return result
      */
@@ -44,7 +43,7 @@ public class Calculator {
     /**
      * Method to multiple
      *
-     * @param first first digit
+     * @param first  first digit
      * @param second second digit
      * @return result
      */
