@@ -1,19 +1,41 @@
 package ru.job4j.condition;
 
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
+
 /**
  * Класс Point
  */
 public class Point {
+
+    private int x;
+
+    private int y;
+
     /**
-     * Класс вычисляет расстояние
+     * Конструтор, который принимает начальное состояние объекта "точка"
      *
-     * @param x1 координата x1
-     * @param y1 координата y1
-     * @param x2 координата x2
-     * @param y2 координата y2
-     * @return дистанция
+     * @param first  координата x
+     * @param second координата y
      */
-    public double distance(int x1, int y1, int x2, int y2) {
-        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    public Point(int first, int second) {
+        this.x = first;
+        this.y = second;
+
     }
+
+    /**
+     * Метод вычисляет расстояние.
+     *
+     * @param that Точка до которой вычисляется расстояние.
+     * @return Дистанцию
+     */
+    public double distance(Point that) {
+        return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2));
+    }
+
+    public void info() {
+        System.out.println(String.format("Point[%s, %s]", this.x, this.y));
+    }
+
 }
