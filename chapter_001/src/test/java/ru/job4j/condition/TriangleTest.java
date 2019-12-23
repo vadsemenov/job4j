@@ -20,4 +20,18 @@ public class TriangleTest {
         //Проверяем результат и ожидаемое значение.
         assertThat(result, closeTo(expected, 0.1));
     }
+
+
+    @Test
+    public void whenAreaSetThree3DPointsThenTriangleArea() {
+        // Создаем объект треугольник.
+        Triangle triangle = new Triangle(new Point(0, 0, 2), new Point(0, 2, 0),
+                new Point(2, 2, 2));
+        // Вычисляем площадь.
+        double result = triangle.area();
+        // Задаем ожидаемый результат.
+        double expected = 2D;
+        //Проверяем результат и ожидаемое значение.
+        assertThat(result, closeTo(expected, 0.1));
+    }
 }
