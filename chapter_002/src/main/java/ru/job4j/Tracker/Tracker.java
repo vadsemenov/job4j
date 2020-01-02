@@ -71,6 +71,36 @@ public class Tracker {
     }
 
     /**
+     * Метод удаляющий заявку.
+     *
+     * @param id ID Заявки
+     */
+    public void deleteItem(String id) {
+        for (int i = 0; i < this.count; i++) {
+            if (this.items[i].getId().equals(id)) {
+                this.items[i] = null;
+            }
+        }
+    }
+
+    /**
+     * Метод для замены заявок.
+     *
+     * @param oldId   Id удаляемой заявки
+     * @param newName Имя новой заявки
+     */
+    public void editItem(String oldId, String newName) {
+        for (int i = 0; i < this.count; i++) {
+            if (this.items[i].getId().equals(oldId)) {
+                Item item = new Item(newName);
+                this.items[i] = item;
+            }
+        }
+
+    }
+
+
+    /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
      *
