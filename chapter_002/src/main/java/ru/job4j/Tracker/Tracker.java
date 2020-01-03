@@ -33,7 +33,7 @@ public class Tracker {
             }
         }
         //System.arraycopy(this.items, 0, findedItem, 0, this.count);
-        return findedItem = Arrays.copyOf(findedItem, size);
+        return Arrays.copyOf(findedItem, size);
     }
 
     /**
@@ -43,16 +43,14 @@ public class Tracker {
      * @return
      */
     public Item[] findByName(String key) {
-        List<Item> findedItemList = new ArrayList<Item>();
-        for (int i = 0; i < this.count; i++) {
-            if (this.items[i].getName().equals(key)) {
-                findedItemList.add(this.items[i]);
+        Item[] findedItem = new Item[100];
+        int numberOfMatches = 0;
+        for (int i = 0; i < this.items.length; i++) {
+            if (items[i].getName().equals(key)) {
+                findedItem[numberOfMatches++] = items[i];
             }
         }
-
-        Item[] findedByName = new Item[findedItemList.size()];
-        findedByName = findedItemList.toArray(findedItemList.toArray(findedByName));
-        return findedByName;
+        return Arrays.copyOf(findedItem, numberOfMatches);
     }
 
     /**
@@ -78,7 +76,10 @@ public class Tracker {
     public Boolean deleteItem(String id) {
         for (int i = 0; i < this.count; i++) {
             if (this.items[i].getId().equals(id)) {
-                this.items[i] = null;
+                for (int j = i; j < this.items.length - 1; j++) {
+                    this.items[j] = this.items[j + 1];
+                }
+                this.count--;
                 return true;
             }
         }
@@ -99,7 +100,7 @@ public class Tracker {
                 return item;
             }
         }
-           return  null;
+        return null;
     }
 
 
