@@ -29,15 +29,14 @@ public class StartUI {
                 System.out.println("Input exist item Id:");
                 String oldId = scanner.nextLine();
                 String newName = scanner.nextLine();
-                if(tracker.findById(oldId)!= null){
-                    tracker.editItem(oldId,newName);
+                if(tracker.editItem(oldId,newName)!= null){
+                    System.out.println("Item succsfully edited.");
                 }
             } else if (select == 3) {
                 System.out.println("=== Delete Item ====");
                 System.out.println("Input item Id:");
                 String id = scanner.nextLine();
-                if(tracker.findById(id)!=null){
-                    tracker.deleteItem(id);
+                if(tracker.deleteItem(id)){
                     System.out.println("Delete item with id " + id);
                 }else{
                     System.out.println("No one Item was deleted.");
@@ -47,7 +46,7 @@ public class StartUI {
                 System.out.println("Input item Id:");
                 String id = scanner.nextLine();
                 if (tracker.findById(id) != null) {
-                    System.out.println("Find item with name:" + tracker.findById(id).getName());
+                    System.out.println("Find item with id:" );
                 }else{
                     System.out.println("No one Item was founded.");
                 }

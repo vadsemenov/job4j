@@ -75,12 +75,14 @@ public class Tracker {
      *
      * @param id ID Заявки
      */
-    public void deleteItem(String id) {
+    public Boolean deleteItem(String id) {
         for (int i = 0; i < this.count; i++) {
             if (this.items[i].getId().equals(id)) {
                 this.items[i] = null;
+                return true;
             }
         }
+        return false;
     }
 
     /**
@@ -89,14 +91,15 @@ public class Tracker {
      * @param oldId   Id удаляемой заявки
      * @param newName Имя новой заявки
      */
-    public void editItem(String oldId, String newName) {
+    public Item editItem(String oldId, String newName) {
         for (int i = 0; i < this.count; i++) {
             if (this.items[i].getId().equals(oldId)) {
                 Item item = new Item(newName);
                 this.items[i] = item;
+                return item;
             }
         }
-
+           return  null;
     }
 
 
