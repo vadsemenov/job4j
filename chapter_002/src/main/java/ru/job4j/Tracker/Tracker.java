@@ -88,19 +88,19 @@ public class Tracker {
 
     /**
      * Метод для замены заявок.
-     *
-     * @param oldId   Id удаляемой заявки
-     * @param newName Имя новой заявки
+     * @param id Id заменяемой заявки
+     * @param item новая заявка
+     * @return
      */
-    public Item editItem(String oldId, String newName) {
-        for (int i = 0; i < this.count; i++) {
-            if (this.items[i].getId().equals(oldId)) {
-                Item item = new Item(newName);
-                this.items[i] = item;
-                return item;
+    public boolean editItem(String id, Item item) {
+        for (int i = 0; i <this.count ; i++) {
+            if(this.items[i].getId().equals(id)){
+                item.setId(items[i].getId());
+                items[i] = item;
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
 

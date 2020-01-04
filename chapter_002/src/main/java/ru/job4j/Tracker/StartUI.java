@@ -28,8 +28,8 @@ public class StartUI {
                 System.out.println("=== Edit Item ====");
                 System.out.println("Input exist item Id:");
                 String oldId = scanner.nextLine();
-                String newName = scanner.nextLine();
-                if(tracker.editItem(oldId,newName)!= null){
+                Item item = new Item("newItem");
+                if(tracker.editItem(oldId,item)){
                     System.out.println("Item succsfully edited.");
                 }
             } else if (select == 3) {
