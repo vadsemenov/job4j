@@ -46,7 +46,7 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] findedItem = new Item[100];
         int numberOfMatches = 0;
-        for (int i = 0; i < this.items.length; i++) {
+        for (int i = 0; i < this.count; i++) {
             if (this.items[i].getName().equals(key)) {
                 findedItem[numberOfMatches++] = items[i];
             }
@@ -92,7 +92,7 @@ public class Tracker {
      *
      * @param id   Id заменяемой заявки
      * @param item новая заявка
-     * @return
+     * @return boolean
      */
     public boolean editItem(String id, Item item) {
         for (int i = 0; i < this.count; i++) {
