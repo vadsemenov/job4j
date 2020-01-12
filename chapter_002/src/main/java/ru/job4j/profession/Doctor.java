@@ -1,4 +1,4 @@
-package ru.job4j.Profession;
+package ru.job4j.profession;
 
 public class Doctor extends Profession {
 
@@ -6,7 +6,7 @@ public class Doctor extends Profession {
         this.name = "doctor";
     }
 
-    public void Diagnose(Pacient pacient) {
+    public void diagnose(Pacient pacient) {
 
     }
 }

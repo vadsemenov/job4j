@@ -1,4 +1,4 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
 
 import java.util.*;
 
@@ -14,7 +14,8 @@ public class Tracker {
      */
     public Item add(Item item) {
         item.setId(generateID());
-        return this.items[this.count++] = item;
+        this.items[this.count++] = item;
+        return item;
     }
 
     /**
@@ -46,7 +47,7 @@ public class Tracker {
         Item[] findedItem = new Item[100];
         int numberOfMatches = 0;
         for (int i = 0; i < this.items.length; i++) {
-            if (items[i].getName().equals(key)) {
+            if (this.items[i].getName().equals(key)) {
                 findedItem[numberOfMatches++] = items[i];
             }
         }
@@ -88,13 +89,14 @@ public class Tracker {
 
     /**
      * Метод для замены заявок.
-     * @param id Id заменяемой заявки
+     *
+     * @param id   Id заменяемой заявки
      * @param item новая заявка
      * @return
      */
     public boolean editItem(String id, Item item) {
-        for (int i = 0; i <this.count ; i++) {
-            if(this.items[i].getId().equals(id)){
+        for (int i = 0; i < this.count; i++) {
+            if (this.items[i].getId().equals(id)) {
                 item.setId(items[i].getId());
                 items[i] = item;
                 return true;
