@@ -101,7 +101,8 @@ public class StartUI {
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit Item ====");
         String oldId = input.askStr("Input exist item Id:");
-        Item item = new Item("newItem");
+        String name = input.askStr("Enter a new name of item: ");
+        Item item = new Item(name);
         if (tracker.editItem(oldId, item)) {
             System.out.println("Item succsfully edited.");
         }
