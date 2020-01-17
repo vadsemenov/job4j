@@ -18,7 +18,6 @@ public class SquareTest {
                 .append("*  *")
                 .append(System.lineSeparator())
                 .append("****")
-                .append(System.lineSeparator())
                 .toString()));
     }
 }

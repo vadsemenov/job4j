@@ -6,21 +6,21 @@ public class Bus implements Transport {
 
     @Override
     public void drive() {
-        if (this.drive == false) {
+        if (!this.drive) {
             this.drive = true;
         } else {
-            this.drive=false;
+            this.drive = false;
         }
     }
 
     @Override
     public void passengers(int number) {
-     this.passengers+=number;
+        this.passengers += number;
     }
 
     @Override
     public double fuel(double liters) {
         double priceLiter = 46.1d;
-        return liters*priceLiter;
+        return liters * priceLiter;
     }
 }
