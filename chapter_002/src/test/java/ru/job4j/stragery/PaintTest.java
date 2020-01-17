@@ -1,4 +1,4 @@
-package ru.job4j.strategy;
+package ru.job4j.stragery;
 
 import org.junit.After;
 import org.junit.Before;

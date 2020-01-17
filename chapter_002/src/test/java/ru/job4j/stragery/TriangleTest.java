@@ -1,4 +1,4 @@
-package ru.job4j.strategy;
+package ru.job4j.stragery;
 
 import static org.hamcrest.core.Is.is;
 
