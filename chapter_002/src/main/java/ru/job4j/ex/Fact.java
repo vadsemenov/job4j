@@ -1,5 +1,8 @@
 package ru.job4j.ex;
 
+/**
+ * Работа с Exception.
+ */
 public class Fact {
     public static void main(String[] args) {
         Fact fact = new Fact();
