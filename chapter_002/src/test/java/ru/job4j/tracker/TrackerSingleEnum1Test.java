@@ -12,4 +12,5 @@ public class TrackerSingleEnum1Test {
     TrackerSingleEnum1 instance2 = TrackerSingleEnum1.INSTANCE;
      assertThat(instance1,is(instance2));
     }
+
 }
