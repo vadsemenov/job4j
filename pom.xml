@@ -16,7 +16,9 @@
     <modules>
         <module>chapter_001</module>
         <module>chapter_002</module>
-        <module>puzzle</module>
+       <!-- <module>puzzle</module>-->
+
+
     </modules>
 
     <dependencies>
@@ -125,6 +127,7 @@
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                           <!-- <excludes>**/module-info.java</excludes> -->
                         </configuration>
                         <goals>
                             <goal>check</goal>
