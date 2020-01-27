@@ -2,6 +2,9 @@ package ru.job4j.sort;
 
 import java.util.Arrays;
 
+/**
+ * Жадный алгоритм. Сдача в кофемашине.
+ */
 public class Machine {
     private final int[] COINS = {10, 5, 2, 1};
 
