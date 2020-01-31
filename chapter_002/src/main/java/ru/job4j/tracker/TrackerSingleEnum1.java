@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.List;
+
 /**
  * Первый вариант Singleton класса Tracker
  */
@@ -22,11 +24,11 @@ public enum TrackerSingleEnum1 {
     }
 
 
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return TRACKER.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public List<Item> findByName(String key) {
         return TRACKER.findByName(key);
     }
 

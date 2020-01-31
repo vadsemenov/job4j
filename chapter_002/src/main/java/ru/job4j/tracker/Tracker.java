@@ -1,10 +1,12 @@
 package ru.job4j.tracker;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Tracker {
-    private final Item[] items = new Item[100];
-    private int count = 0;
+    private List<Item> items = new ArrayList<>();
+
 
     /**
      * Метод добавляет заявки в трекер.
@@ -14,7 +16,7 @@ public class Tracker {
      */
     public Item add(Item item) {
         item.setId(generateID());
-        this.items[this.count++] = item;
+        this.items.add(item);
         return item;
     }
 
@@ -23,18 +25,8 @@ public class Tracker {
      *
      * @return Массив внесенных заявок
      */
-    public Item[] findAll() {
-        Item[] findedItem = new Item[this.items.length];
-        int size = 0;
-        for (int index = 0; index < this.items.length; index++) {
-            Item item = this.items[index];
-            if (item != null) {
-                findedItem[size] = item;
-                size++;
-            }
-        }
-        //System.arraycopy(this.items, 0, findedItem, 0, this.count);
-        return Arrays.copyOf(findedItem, size);
+    public List<Item> findAll() {
+        return this.items;
     }
 
     /**
@@ -43,16 +35,16 @@ public class Tracker {
      * @param key
      * @return
      */
-    public Item[] findByName(String key) {
-        Item[] findedItem = new Item[100];
-        int numberOfMatches = 0;
-        for (int i = 0; i < this.count; i++) {
-            if (this.items[i].getName().equals(key)) {
-                findedItem[numberOfMatches++] = items[i];
+    public List<Item> findByName(String key) {
+        List<Item> findedItem = new ArrayList<>();
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
+                findedItem.add(item);
             }
         }
-        return Arrays.copyOf(findedItem, numberOfMatches);
+        return findedItem;
     }
+
 
     /**
      * Метод возвращает заявку по Id.
@@ -61,13 +53,14 @@ public class Tracker {
      * @return Заявка
      */
     public Item findById(String id) {
-        for (int i = 0; i < this.count; i++) {
-            if (this.items[i].getId().equals(id)) {
-                return this.items[i];
+        for (Item item : items) {
+            if (item.getId().equals(id)) {
+                return item;
             }
         }
         return null;
     }
+
 
     /**
      * Метод удаляющий заявку.
@@ -75,17 +68,14 @@ public class Tracker {
      * @param id ID Заявки
      */
     public Boolean deleteItem(String id) {
-        for (int i = 0; i < this.count; i++) {
-            if (this.items[i].getId().equals(id)) {
-                for (int j = i; j < this.items.length - 1; j++) {
-                    this.items[j] = this.items[j + 1];
-                }
-                this.count--;
-                return true;
+        for (Item item : items) {
+            if (item.getId().equals(id)) {
+                return items.remove(item);
             }
         }
         return false;
     }
+
 
     /**
      * Метод для замены заявок.
@@ -95,10 +85,10 @@ public class Tracker {
      * @return boolean
      */
     public boolean editItem(String id, Item item) {
-        for (int i = 0; i < this.count; i++) {
-            if (this.items[i].getId().equals(id)) {
-                item.setId(items[i].getId());
-                items[i] = item;
+        for (Item itemFromColl : items) {
+            if (itemFromColl.getId().equals(id)) {
+                item.setId(itemFromColl.getId());
+                itemFromColl = item;
                 return true;
             }
         }
