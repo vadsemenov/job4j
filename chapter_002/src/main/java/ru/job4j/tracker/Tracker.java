@@ -70,7 +70,8 @@ public class Tracker {
     public Boolean deleteItem(String id) {
         for (Item item : items) {
             if (item.getId().equals(id)) {
-                return items.remove(item);
+                items.remove(items.indexOf(item));
+                return true;
             }
         }
         return false;
@@ -88,7 +89,7 @@ public class Tracker {
         for (Item itemFromColl : items) {
             if (itemFromColl.getId().equals(id)) {
                 item.setId(itemFromColl.getId());
-                itemFromColl = item;
+                items.set(items.indexOf(itemFromColl), item);
                 return true;
             }
         }
