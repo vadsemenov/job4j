@@ -68,9 +68,9 @@ public class Tracker {
      * @param id ID Заявки
      */
     public Boolean deleteItem(String id) {
-        for (Item item : items) {
-            if (item.getId().equals(id)) {
-                items.remove(items.indexOf(item));
+        for (int i = 0; i < this.items.size(); i++) {
+            if (this.items.get(i).getId().equals(id)) {
+                items.remove(i);
                 return true;
             }
         }
@@ -86,10 +86,9 @@ public class Tracker {
      * @return boolean
      */
     public boolean editItem(String id, Item item) {
-        for (Item itemFromColl : items) {
-            if (itemFromColl.getId().equals(id)) {
-                item.setId(itemFromColl.getId());
-                items.set(items.indexOf(itemFromColl), item);
+        for (int i = 0; i < this.items.size(); i++) {
+            if (this.items.get(i).getId().equals(id)) {
+                items.set(i, item);
                 return true;
             }
         }
