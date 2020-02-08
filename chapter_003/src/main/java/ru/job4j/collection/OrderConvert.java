@@ -8,7 +8,7 @@ public class OrderConvert {
         HashMap<String, Order> map = new HashMap<>();
         // for orders
         for (Order order : orders) {
-            map.put(order.getNumber(),order);
+            map.put(order.getNumber(), order);
         }
 
 //        Внутри метода process нужно пройти по всем элементам списка orders и вставить их в map.
