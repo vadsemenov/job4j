@@ -37,7 +37,7 @@ public class MaxTest {
     @Test
     public void whenMax4To3To2To1Then4() {
         Max max = new Max();
-        int result= max.max(4,3,2,1);
-        assertThat(result,is(4));
+        int result = max.max(4, 3, 2, 1);
+        assertThat(result, is(4));
     }
 }
