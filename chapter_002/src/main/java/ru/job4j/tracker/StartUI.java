@@ -2,8 +2,11 @@ package ru.job4j.tracker;
 
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class StartUI {
+
+     private Consumer<String> output;
 
     public static void main(String[] args) {
         Input input = new ConsoleInput();
@@ -12,11 +15,12 @@ public class StartUI {
         List<UserAction> actions = List.of(new CreateAction(), new ReplaceAction(), new DeleteAction(),
                 new FindByNameAction(), new FindByIdAction(), new FindAllAction(), new ExitAction());
 
-        new StartUI().init(validate, tracker, actions);
+        new StartUI().init(validate, tracker, actions, System.out::println);
     }
 
-    public void init(Input input, Tracker tracker, List<UserAction> actions) {
+    public void init(Input input, Tracker tracker, List<UserAction> actions, Consumer<String> output) {
         boolean run = true;
+        this.output = output;
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ", actions.size());
@@ -26,9 +30,9 @@ public class StartUI {
     }
 
     private void showMenu(List<UserAction> actions) {
-        System.out.println("Menu:");
+        output.accept("Menu:");
         for (int index = 0; index < actions.size(); index++) {
-            System.out.println(index + "." + actions.get(index).name());
+            output.accept(index + "." + actions.get(index).name());
         }
     }
 }
