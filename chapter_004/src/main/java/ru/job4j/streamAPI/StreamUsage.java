@@ -3,6 +3,13 @@ package ru.job4j.streamAPI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+/**
+ *
+ * Пример использования Stream Api.
+ * Нахождение объектов с именем BUG
+ *
+ */
 public class StreamUsage {
     public static class Task {
         private final String name;
