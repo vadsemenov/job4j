@@ -19,10 +19,8 @@ public class BankService {
         User user = findByPassport(passport);
         if (user != null) {
             ArrayList<Account> accounts = (ArrayList<Account>) users.get(user);
-            for (Account ac : accounts) {
-                if (ac.equals(account)) {
-                    return;
-                }
+            if (accounts.stream().filter(ac -> ac.equals(account)).findFirst().orElse(null) != null) {
+                return;
             }
             accounts.add(account);
         }
@@ -36,7 +34,7 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-           return users.get(user).stream().filter(account -> account.getRequisite()
+            return users.get(user).stream().filter(account -> account.getRequisite()
                     .equals(requisite)).findFirst().orElse(null);
         }
         return null;
