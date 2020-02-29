@@ -1,6 +1,6 @@
 package ru.job4j.streamAPI;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private int score;
     private String name;
     private String secondName;
@@ -27,5 +27,10 @@ public class Student {
 
     public void setSecondName(String secondName) {
         this.secondName = secondName;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Integer.compare(score, o.score);
     }
 }
