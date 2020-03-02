@@ -19,7 +19,7 @@ public class BankService {
         User user = findByPassport(passport);
         if (user != null) {
             ArrayList<Account> accounts = (ArrayList<Account>) users.get(user);
-            if (accounts.stream().filter(ac -> ac.equals(account)).findFirst().orElse(null) != null) {
+            if(accounts.contains(account)){
                 return;
             }
             accounts.add(account);
