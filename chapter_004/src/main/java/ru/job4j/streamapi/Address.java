@@ -1,4 +1,4 @@
-package ru.job4j.streamAPI;
+package ru.job4j.streamapi;
 
 import java.util.Objects;
 
@@ -26,14 +26,18 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Address address = (Address) o;
         return Objects.equals(this, address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(city,street,home,apartment);
+        return Objects.hash(city, street, home, apartment);
     }
 }

@@ -1,34 +1,14 @@
-package ru.job4j.streamAPI;
+package ru.job4j.streamapi;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 
 /**
- *
  * Пример использования Stream Api.
  * Нахождение объектов с именем BUG
- *
  */
 public class StreamUsage {
-    public static class Task {
-        private final String name;
-        private final long spent;
-
-        public Task(String name, long spent) {
-            this.name = name;
-            this.spent = spent;
-        }
-
-        @Override
-        public String toString() {
-            return "Task{" +
-                    "name='" + name + '\'' +
-                    ", spent=" + spent +
-                    '}';
-        }
-    }
-
     public static void main(String[] args) {
         List<Task> tasks = List.of(
                 new Task("Bug #1", 100),
@@ -45,5 +25,23 @@ public class StreamUsage {
         ).reduce(0L, Long::sum);
 
         System.out.println(total);
+    }
+
+    public static class Task {
+        private final String name;
+        private final long spent;
+
+        public Task(String name, long spent) {
+            this.name = name;
+            this.spent = spent;
+        }
+
+        @Override
+        public String toString() {
+            return "Task{"
+                    + "name='" + name + '\''
+                    + ", spent=" + spent
+                    + '}';
+        }
     }
 }

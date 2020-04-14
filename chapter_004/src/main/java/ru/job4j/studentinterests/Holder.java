@@ -1,4 +1,4 @@
-package ru.job4j.studentInterests;
+package ru.job4j.studentinterests;
 
 public class Holder {
     String key, value;

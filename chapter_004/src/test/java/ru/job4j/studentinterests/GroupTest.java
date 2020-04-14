@@ -1,4 +1,4 @@
-package ru.job4j.studentInterests;
+package ru.job4j.studentinterests;
 
 import org.junit.Assert;
 import org.junit.Test;
