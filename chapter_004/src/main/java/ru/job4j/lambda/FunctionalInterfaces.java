@@ -22,9 +22,8 @@ public class FunctionalInterfaces {
         );
 
 
-        //List<Double> buffer = new ArrayList<>();
         calc.multiple(0, 3, 2,
-                FunctionalInterfaces::add,                 //buffer::add,
+                FunctionalInterfaces::add,
                 result -> System.out.println(result));
 
 
@@ -46,6 +45,4 @@ public class FunctionalInterfaces {
     public interface Operation {
         double calc(int left, int right);
     }
-
-
 }

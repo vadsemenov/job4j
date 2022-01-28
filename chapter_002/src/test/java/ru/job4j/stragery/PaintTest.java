@@ -11,9 +11,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class PaintTest {
-    // поле содержит дефолтный вывод в консоль.
     private final PrintStream stdout = System.out;
-    // буфер для результата.
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
 
     @Before
@@ -31,9 +29,7 @@ public class PaintTest {
 
     @Test
     public void whenDrawSquare() {
-        // выполняем действия пишушиее в консоль.
         new Paint().draw(new Square());
-        // проверяем результат вычисления
         assertThat(
                 new String(out.toByteArray()),
                 is(
@@ -49,7 +45,6 @@ public class PaintTest {
                                 .toString()
                 )
         );
-        // возвращаем обратно стандартный вывод в консоль.
     }
 
     @Test

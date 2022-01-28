@@ -29,7 +29,6 @@ public class TrackerTest {
         tracker.add(item2);
         List<Item> result = new ArrayList<>();
         result.addAll(tracker.findAll());
-        //Item[] result = tracker.findAll();
         assertThat(result, is(items));
     }
 
