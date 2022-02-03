@@ -4,8 +4,16 @@ public class Item {
     private String id;
     private String name;
 
+    public Item() {
+    }
+
     public Item(String name) {
         this.name = name;
+    }
+
+    public Item(String name, int id) {
+        this.name = name;
+        this.id = String.valueOf(id);
     }
 
     public String getId() {
