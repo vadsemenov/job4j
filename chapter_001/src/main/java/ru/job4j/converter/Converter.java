@@ -55,7 +55,6 @@ public class Converter {
         expected = 2;
         out = Converter.rubleToDollar(in);
         System.out.println("120 rubles are 2 dollars. Test result : " + passed);
-
     }
 
 }
