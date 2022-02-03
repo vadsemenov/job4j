@@ -51,7 +51,6 @@ public class X2Test {
         Assert.assertEquals(expected, rsl);
     }
 
-    //   - a = 1, b = 1, c = 1, x = 0.
     @Test
     public void whenA1B1C1X0Then1() {
         int a = 1;
