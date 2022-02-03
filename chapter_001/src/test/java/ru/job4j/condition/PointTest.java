@@ -1,6 +1,8 @@
 package ru.job4j.condition;
 
+import org.junit.Assert;
 import org.junit.Test;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -13,14 +15,14 @@ public class PointTest {
         first.info();
         second.info();
         System.out.println(String.format("Result is %s", result));
-        assertThat(result, is(10D));
+        Assert.assertEquals(result, 10D, 0.01);
     }
 
     @Test
     public void whenCheckItself() {
         Point point = new Point(0, 0);
         double result = point.distance(point);
-        assertThat(result, is(0D));
+        Assert.assertEquals(result, 0D, 0.01);
     }
 
     @Test
