@@ -7,7 +7,6 @@
     <name>junior</name>
 
 
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -19,7 +18,7 @@
         <module>chapter_002</module>
         <module>chapter_003</module>
         <module>chapter_004</module>
-       <!-- <module>puzzle</module> -->
+        <!-- <module>puzzle</module> -->
     </modules>
 
     <dependencies>
@@ -71,7 +70,11 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.6.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>9.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -111,7 +114,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.2</version>
                 <executions>
                     <execution>
                         <id>validate</id>
@@ -122,13 +125,20 @@
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                           <!-- <excludes>**/module-info.java</excludes> -->
+                            <!-- <excludes>**/module-info.java</excludes> -->
                         </configuration>
                         <goals>
                             <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>9.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
