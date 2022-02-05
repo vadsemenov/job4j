@@ -10,12 +10,10 @@ public class Machine {
         int dif = money - price;
 
         for (int coin : coins) {
-            if (dif >= coin) {
-                for (int i = size; i < size + dif / coin; i++) {
-                    rsl[i] = coin;
-                }
-                size += dif / coin;
-                dif %= coin;
+            while (dif >= coin) {
+                rsl[size] = coin;
+                dif -= coin;
+                size++;
             }
         }
 
